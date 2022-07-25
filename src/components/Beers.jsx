@@ -21,6 +21,8 @@ const Beers = () => {
   useEffect(() => {
     if (searchField.length > 0) {
       dispatch(fetchBeers({ searchField, page }));
+    } else {
+      dispatch(fetchFirstUpdate({ page }));
     }
   }, [page]);
 
