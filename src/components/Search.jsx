@@ -1,7 +1,7 @@
 import Button from "@mui/material/Button";
 
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { setSearch, setPage, fetchBeers } from "../redux/slices/beerSlice";
+import { setSearch, fetchBeers } from "../redux/slices/beerSlice";
 
 const Search = () => {
   const dispatch = useDispatch();

@@ -11,12 +11,19 @@ export const fetchBeers = createAsyncThunk(
     return data;
   }
 );
+export const fetchFirstUpdate = createAsyncThunk(
+  "beer/fetchFirstUpdate",
+  async () => {
+    const { data } = await axios.get("https://api.punkapi.com/v2/beers/");
+    return data;
+  }
+);
 
 export const beerSlice = createSlice({
   name: "beer",
   initialState: {
     beers: [],
-    searchField: "Beer",
+    searchField: "",
     page: 1,
   },
   reducers: {
@@ -36,6 +43,16 @@ export const beerSlice = createSlice({
       state.beers = action.payload;
     },
     [fetchBeers.rejected]: (state, action) => {
+      state.status = "error";
+    },
+    [fetchFirstUpdate.pending]: (state) => {
+      state.status = "loading";
+    },
+    [fetchFirstUpdate.fulfilled]: (state, action) => {
+      state.status = "success";
+      state.beers = action.payload;
+    },
+    [fetchFirstUpdate.rejected]: (state, action) => {
       state.status = "error";
     },
   },

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 import BeersSkeleton from "./BeerSkeleton";
 import BeerCard from "./BeerCard";
 import { setPage } from "../redux/slices/beerSlice";
-import { fetchBeers } from "../redux/slices/beerSlice";
+import { fetchBeers, fetchFirstUpdate } from "../redux/slices/beerSlice";
 
 const Beers = () => {
   const status = useSelector((state) => state.beer.status);
@@ -13,6 +13,10 @@ const Beers = () => {
   const page = useSelector((state) => state.beer.page);
   const searchField = useSelector((state) => state.beer.searchField);
   const dispatch = useDispatch();
+  console.log(beers);
+  useEffect(() => {
+    dispatch(fetchFirstUpdate());
+  }, []);
 
   useEffect(() => {
     if (searchField.length > 0) {
@@ -41,7 +45,7 @@ const Beers = () => {
           {status === "loading" ? skeletons : <BeerCard />}
         </div>
 
-        {page > 1 ? (
+        {page > 1 && beers.length !== 25 ? (
           <Button
             sx={{
               color: "white",
@@ -64,9 +68,7 @@ const Beers = () => {
           ""
         )}
 
-        {beers.length < 24 ? (
-          ""
-        ) : (
+        {beers.length >= 24 && beers.length !== 25 ? (
           <Button
             sx={{
               color: "white",
@@ -85,6 +87,8 @@ const Beers = () => {
           >
             NEXT
           </Button>
+        ) : (
+          ""
         )}
       </div>
     </div>
