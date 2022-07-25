@@ -1,0 +1,31 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  &__input {
+    width: 200px;
+    color: white;
+    padding: 8px 12px;
+    margin-right: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px #b6684973;
+    outline: none;
+    transition: all 0.25s ease-in-out;
+    &:focus {
+      width: 230px;
+      border-bottom: solid 2px #b66849;
+    }
+    &::placeholder {
+      color: white;
+    }
+  }
+  &__select {
+    margin-right: 15px;
+  }
+}

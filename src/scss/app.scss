@@ -1,0 +1,15 @@
+@import "./libs/normalize";
+@import "./components/all";
+
+body {
+  font-family: "Mulish", sans-serif;
+  background-color: #303030;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

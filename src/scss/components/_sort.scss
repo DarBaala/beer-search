@@ -1,0 +1,29 @@
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+  &__select {
+    color: white;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: 10px 30px 10px 10px;
+    padding-right: 30px;
+  }
+  &__title {
+    color: white;
+    margin: 0 15px;
+  }
+  &__categories {
+    @media (max-width: 550px) {
+      margin-bottom: 20px;
+    }
+  }
+}
