@@ -14,8 +14,9 @@ const Beers = () => {
   const searchField = useSelector((state) => state.beer.searchField);
   const dispatch = useDispatch();
   console.log(beers);
+
   useEffect(() => {
-    dispatch(fetchFirstUpdate());
+    dispatch(fetchFirstUpdate({ page }));
   }, []);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ const Beers = () => {
           {status === "loading" ? skeletons : <BeerCard />}
         </div>
 
-        {page > 1 && beers.length !== 25 ? (
+        {page > 1 ? (
           <Button
             sx={{
               color: "white",
@@ -68,7 +69,7 @@ const Beers = () => {
           ""
         )}
 
-        {beers.length >= 24 && beers.length !== 25 ? (
+        {beers.length >= 24 ? (
           <Button
             sx={{
               color: "white",

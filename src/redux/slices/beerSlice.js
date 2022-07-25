@@ -13,8 +13,11 @@ export const fetchBeers = createAsyncThunk(
 );
 export const fetchFirstUpdate = createAsyncThunk(
   "beer/fetchFirstUpdate",
-  async () => {
-    const { data } = await axios.get("https://api.punkapi.com/v2/beers/");
+  async (params) => {
+    const { page } = params;
+    const { data } = await axios.get(
+      `https://api.punkapi.com/v2/beers?page=${page}&per_page=24`
+    );
     return data;
   }
 );
