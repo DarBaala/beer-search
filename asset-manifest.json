@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/beer-search/static/css/main.b8943ecc.css",
+    "main.js": "/beer-search/static/js/main.b420abf3.js",
+    "index.html": "/beer-search/index.html",
+    "main.b8943ecc.css.map": "/beer-search/static/css/main.b8943ecc.css.map",
+    "main.b420abf3.js.map": "/beer-search/static/js/main.b420abf3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8943ecc.css",
+    "static/js/main.b420abf3.js"
+  ]
+}
