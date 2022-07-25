@@ -16,7 +16,7 @@ export const beerSlice = createSlice({
   name: "beer",
   initialState: {
     beers: [],
-    searchField: "",
+    searchField: "Beer",
     page: 1,
   },
   reducers: {
