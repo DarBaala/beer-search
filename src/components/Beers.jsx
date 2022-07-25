@@ -13,7 +13,6 @@ const Beers = () => {
   const page = useSelector((state) => state.beer.page);
   const searchField = useSelector((state) => state.beer.searchField);
   const dispatch = useDispatch();
-  console.log(beers);
 
   useEffect(() => {
     dispatch(fetchFirstUpdate({ page }));
